@@ -39,35 +39,35 @@ export default function About(params) {
 I enjoy creating designs that are easy to use and look great.<br></br> I want to help businesses stand out online.When I'm not working, I'm learning about backend technologies to improve my skills. Let's work together to make your ideas a reality! </p> 
                 <div className="mt-10 flex w-full border-t-[1px] border-[#a1b562]">
                     <div className=" w-1/2 mt-5 ">
-                        <h1 className="text-5xl font-main tracking-wide  ">My Skills</h1>
-                        <button className="px-6 py-3 bg-zinc-900 mt-10 rounded-full flex items-center justify-between gap-5 text-[#f1f1f1] uppercase"  >Read More
+                        <h1 className="text-5xl px-10 font-main tracking-wide  ">My Skills</h1>
+                        {/* <button className="px-6 py-3 bg-zinc-900 mt-10 rounded-full flex items-center justify-between gap-5 text-[#f1f1f1] uppercase"  >Read More
                         <div className="w-2 h-2 rounded-full bg-zinc-100"></div>
-                        </button>
+                        </button> */}
                     </div>
-                    <div ref={ref}  className="w-1/2 mt-5 font-main tracking-wider  rounded-3xl h-fit p-5 bg-[#004D43]  text-2xl flex   justify-around items-start">
+                    <div ref={ref}  className="w-2/3 mt-5 font-main tracking-wider  rounded-3xl h-fit p-5 bg-[#004D43]  text-4xl flex   justify-around items-start">
                         <motion.div 
-                        className="flex flex-col gap-5"
+                        className="flex flex-col gap-10"
                         variants={container}
                         initial={isInView? "hidden" : "visible"}
                         animate={isInView? "visible" : "hidden"}
                         >
-                          {  ["JavaScript","HTML","Tailwind","Java"].map((item,i)=>{
+                        {  ["JavaScript","HTML","Tailwind","Java"].map((item,i)=>{
                                 return   <motion.div variants={items} key={item} className=" w-fit px-4 py-1  flex  items-center justify-center gap-4  rounded-md  text-[#f1f1f1] "> 
                                 <div className="w-2 h-2 rounded-full bg-zinc-100"></div>{item}</motion.div>
-                          })}
-                      
+                        })}
+            
                         
                         </motion.div>
 
-                        <motion.div className="flex flex-col gap-5"
-                        className="flex flex-col gap-5"
+                        <motion.div className="flex flex-col gap-10"
+            
                         variants={container}
                         initial={isInView? "hidden" : "visible"}
                         animate={isInView? "visible" : "hidden"}
                         >
                         {  ["React","CSS","Material UI","Git"].map((item,i)=>{
                                 return   <motion.div variants={items} key={item} className=" w-fit px-4 py-1  flex  items-center justify-center gap-4  rounded-md  text-[#f1f1f1] ">  <div className="w-2 h-2 rounded-full bg-zinc-100"></div>{item}</motion.div>
-                         })}
+                        })}
                         </motion.div>
                     </div>
                 </div>

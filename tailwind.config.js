@@ -14,6 +14,7 @@ export default {
       "neue":['"Neue Montreal"'],
       "nads":['Ojuju'],
       "main":['"Oswald"'],
+      "logo":['Antonio']
     },
     backgroundImage:{
       "project":"url('/project1.svg')"

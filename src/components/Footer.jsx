@@ -2,9 +2,11 @@ import { useRef, useState } from "react"
 
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { SlSocialGithub } from "react-icons/sl";
-
+import { motion, useInView } from "framer-motion";
 
 export default function Footer(params) {
+
+
     const [name,setname] = useState(null)
     const [email,setEmail] = useState(null)
     const [message,setMessage] = useState(null)
@@ -16,6 +18,7 @@ export default function Footer(params) {
 
 
     const ref = useRef()
+    const isInView = useInView(ref)
 
         const handlefocus = (e)=>{
             if(e.target.name==="name"){
@@ -63,11 +66,17 @@ export default function Footer(params) {
 
    
     return(
-        <div data-scroll  data-scroll-section data-scroll-speed="-0.2"   className="w-full z-40  bg-[#fafaf9] text-center px-20 pb-10  ">
+        <div ref={ref} data-scroll  data-scroll-section data-scroll-speed="-0.2"   className="w-full z-40  bg-[#fafaf9] text-center px-20 pb-10  ">
             <h1 className="text-[10vw] font-main  text-[#8c8c73] font-black tracking-widest">.CONTACT.</h1>
             <div className="w-full h-[80vh] mt-20 flex gap-40">
                 <div className="w-3/5  ">
-                    <h1 className=" font-neue text-4xl font-bold">Let's make your vision a reality. Reach out anytime! </h1>
+                    <motion.h1
+                      initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
+                  animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
+                  transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.3}}
+                    className=" font-neue text-4xl font-bold">
+                        Let's make your vision a reality. Reach out anytime! 
+                        </motion.h1>
                    <div className="flex flex-col justify-between h-50 mt-20">
 
                     <div className="flex w-full justify-between gap-20">
@@ -88,7 +97,11 @@ export default function Footer(params) {
                         <input name="message" placeholder="Your Message" value={data.message} onChange={(e)=>handleChange(e)} className="w-full outline-none border-none bg-transparent" type="email" onFocus={(e)=>handlefocus(e)} onBlur={(e)=>handleBlur(e)}  />
                     </div>
 
-                    <button onClick={handleSubmit} className=" self-start mt-10 px-8 py-4 rounded-full font-neue font-medium text-[#f1f1f1] bg-[#262626]" >SEND MESSAGE</button>
+                    <motion.button
+                      initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
+                      animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
+                      transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:1}}
+                    onClick={handleSubmit} className=" self-start mt-10 px-8 py-4 rounded-full font-neue font-medium text-[#f1f1f1] bg-[#262626]" >SEND MESSAGE</motion.button>
                    </div>
                 </div>
 
@@ -98,13 +111,33 @@ export default function Footer(params) {
 
                 <div className="w-2/5 flex  flex-col items-start  gap-36">
                 <div className="flex flex-col items-start" >
-                    <h1 className=" text-3xl font-main font-bold mb-4">Contact Details</h1>
-                    <h3>nadeemnagarji@gmail.com</h3>
+                    <motion.h1
+                     initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
+                     animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
+                     transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.3}}
+                    className=" text-3xl font-main font-bold mb-4">Contact Details</motion.h1>
+                    <motion.h3
+                     initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
+                     animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
+                     transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.5}}
+                    >nadeemnagarji@gmail.com</motion.h3>
                 </div>
                 <div className="flex  flex-col justify-between">
-                    <h1 className=" text-3xl   font-main font-bold mb-4">My Digital Spaces</h1>
-                   <div className="flex w-1/2 h-10 gap-2 items-center text-[#8c8c73]"><TiSocialLinkedinCircular /> <h3 className=" text-lg ">LinkedIn</h3> </div> 
-                   <div  className="flex w-1/2 h-10 gap-2 items-center text-[#8c8c73]" > <  SlSocialGithub /> < h3 className="text-lg"> Github</h3> </div> 
+                    <motion.h1
+                     initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
+                     animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
+                     transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.3}}
+                    className=" text-3xl   font-main font-bold mb-4">My Digital Spaces</motion.h1>
+                   <div className="flex w-1/2 h-10 gap-2 items-center text-[#8c8c73]"><TiSocialLinkedinCircular /> <motion.h3
+                        initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
+                        animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
+                        transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.5}}
+                   className=" text-lg ">LinkedIn</motion.h3> </div> 
+                   <div  className="flex w-1/2 h-10 gap-2 items-center text-[#8c8c73]" > <  SlSocialGithub /> < motion.h3
+                        initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
+                        animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
+                        transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:1}}
+                   className="text-lg"> Github</motion.h3> </div> 
                 </div>
                 </div>
                 
