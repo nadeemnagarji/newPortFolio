@@ -32,27 +32,29 @@ function LandingPage() {
   };
   
   return (
-    <div  data-scroll data-scroll-section data-scroll-speed="-.9" className='w-full h-screen pt-1 mt-10 text-[#212121] ' >
+    <div  data-scroll data-scroll-section data-scroll-speed="-.5"  className='w-full h-[90vh] pt-1 mt-10 text-[#212121]   max-laptop:h-[70vh] max-lg-phone:h-[50vh]' >
 
 
-        <motion.div className='textstructre mt-24 px-20'
+        <motion.div className='textstructre mt-24 px-20 max-tablet:px-5 '
            variants={container}
            initial="hidden"
            animate="visible"
         >
           {["A Frontend Developer","Embarking on","the Fullstack Journey"].map((item,index)=>{
             return(
-              <div className="masker font-bold  font-main ">
-                <div  className='w-fit flex items-center '>
+              <div className="masker font-bold    font-main  ">
+                <div  className='w-fit flex items-center max-tablet:w-full max-tablet:justify-center  '>
                   {index ===1 && <motion.div 
                   initial={{width: 0}} 
                   animate={{width :"7vw"}}  
                   transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.5}}
-                  className='w-[7vw] mt-[1vw] h-[5vw] flex items-center justify-center bg-green-500 rounded-md mr-[1vw]'> 
+                  className='w-[7vw]  mt-[1vw] h-[5vw]  bg-green-500 rounded-md mr-[1vw] 
+                    max-tablet:bg-transparent max-tablet:mr-0
+                  '> 
                   
                   </motion.div> 
                   }
-                <motion.h1 variants={items} className='text-[6.5vw] leading-[7vw] tracking-tight'>{item}</motion.h1>  {/*animation is given in this line */}
+                <motion.h1 variants={items} className='text-[6.5vw]   leading-[7vw] tracking-tight max-tablet:text-[10vw] max-tablet:leading-none'>{item}</motion.h1>  {/*animation is given in this line */}
                 </div> 
             </div>
             )
@@ -61,7 +63,7 @@ function LandingPage() {
             
         </motion.div>
 
-        <div  className=' border-t border-gray-500 mt-20 flex justify-between items-center py-5 px-20'>
+        <div  className=' border-t border-gray-500 mt-20 flex justify-between items-center py-5 px-20 max-tablet:px-5'>
               {[{icon:<TiSocialLinkedinCircular/>,name:"linkedIn"},{icon:<SlSocialGithub/>,name:"Github"}].map((item,index)=>{
                 return <motion.div 
                 initial={  {opacity:"0",y:20}} 

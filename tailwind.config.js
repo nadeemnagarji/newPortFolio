@@ -18,7 +18,13 @@ export default {
     },
     backgroundImage:{
       "project":"url('/project1.svg')"
-    }
+    },
+    screens: {
+      'sm-phone': '300px',
+      "lg-phone":"450px",
+      "tablet":'750px',
+      "laptop":"1030px"
+    },
   },
   plugins: [],
 }

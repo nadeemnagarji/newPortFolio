@@ -1,9 +1,15 @@
 @tailwind base;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FFFFFF;
+  box-sizing: border-box;
+
+}
+
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: #F1F1F1;
-}
+
 
 

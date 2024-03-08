@@ -20,7 +20,7 @@ function App() {
 
 
   return (
-      <div className=" w-full  flex items-center flex-col  bg-white">
+      <div className=" w-screen  overflow-x-hidden flex items-center flex-col  bg-white">
        
           <Navbar />
           <LandingPage />
