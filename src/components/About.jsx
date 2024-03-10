@@ -31,7 +31,7 @@ export default function About(params) {
 
 
     return(
-        <div ref={ref}  data-scroll  data-scroll-section data-scroll-speed="-0.1"  className=" w-full z-20 py-20 bg-[#FAFAF9] rounded-tl-3xl  rounded-tr-3xl  px-10 max-laptop:px-5 "> 
+        <div name="skills" ref={ref}  data-scroll  data-scroll-section data-scroll-speed="-0.1"  className=" w-full z-20 py-20 bg-[#FAFAF9] rounded-tl-3xl  rounded-tr-3xl  px-10 max-laptop:px-5 "> 
                 <motion.h1
                   initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
                   animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:50} }  

@@ -5,11 +5,11 @@ import {  motion, useInView } from 'framer-motion';
 
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { SlSocialGithub } from "react-icons/sl";
-
+import { Element, Link, animateScroll as scroll, scroller } from 'react-scroll'
 function LandingPage() {
 
 
- 
+
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -32,13 +32,13 @@ function LandingPage() {
   };
   
   return (
-    <div  data-scroll data-scroll-section data-scroll-speed="-.5"  className='w-full h-[90vh] pt-1 mt-10 text-[#212121]   max-laptop:h-[70vh] max-lg-phone:h-[50vh]' >
+    <div name="home"  data-scroll data-scroll-section data-scroll-speed="-.5"  className='w-full h-[90vh] pt-1 mt-10 text-[#212121]    max-laptop:h-[70vh] max-lg-phone:h-[50vh]' >
 
 
         <motion.div className='textstructre mt-24 px-20 max-tablet:px-5 '
-           variants={container}
-           initial="hidden"
-           animate="visible"
+          variants={container}
+          initial="hidden"
+          animate="visible"
         >
           {["A Frontend Developer","Embarking on","the Fullstack Journey"].map((item,index)=>{
             return(
@@ -48,7 +48,7 @@ function LandingPage() {
                   initial={{width: 0}} 
                   animate={{width :"7vw"}}  
                   transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.5}}
-                  className='w-[7vw]  mt-[1vw] h-[5vw]  bg-green-500 rounded-md mr-[1vw] 
+                  className='w-[7vw]  mt-[1vw] h-[5vw]  bg-[#004D43]  rounded-md mr-[1vw] 
                     max-tablet:bg-transparent max-tablet:mr-0
                   '> 
                   
@@ -64,17 +64,24 @@ function LandingPage() {
         </motion.div>
 
         <div  className=' border-t border-gray-500 mt-20 flex justify-between items-center py-5 px-20 max-tablet:px-5'>
-              {[{icon:<TiSocialLinkedinCircular/>,name:"linkedIn"},{icon:<SlSocialGithub/>,name:"Github"}].map((item,index)=>{
-                return <motion.div 
+              {[{icon:<TiSocialLinkedinCircular/>,name:"linkedIn",link:"https://www.linkedin.com/in/nadeem-nagarji"}
+              ,{icon:<SlSocialGithub/>,name:"Github",link:"https://github.com/nadeemnagarji"}].map((item,index)=>{
+                return <a href={item.link} target="_blank"  ><motion.div 
                 initial={  {opacity:"0",y:20}} 
-                     animate={  {opacity:"100%",y:0} }  
-                     transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:1}}
-                className='rounded-full cursor-pointer h-full text-md font-normal flex items-center gap-2 tracking-tight' > <span className='text-xl'>{item.icon}</span> {item.name}</motion.div>
+                    animate={  {opacity:"100%",y:0} }  
+                    transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:1}}
+                className='rounded-full cursor-pointer h-full text-md font-normal flex items-center gap-2 tracking-tight' > <span className='text-xl'>{item.icon}</span> {item.name}</motion.div></a>
               })}
               <div className='start flex items-center gap-2 '>
-                  <div className='  px-4 py-1 border-[1px]  border-[#8c8c73] cursor-pointer rounded-full text-sm'>
+                  <Link
+                   to="contact"
+                   spy={true}
+                   smooth={true}
+                   offset={0} 
+                   duration={500}
+                  ><div className='  px-4 py-1 border-[1px]  border-[#8c8c73] cursor-pointer rounded-full text-sm'>
                     Start the project
-                  </div>
+                  </div></Link> 
                   <div className='hover:bg-[#212121] hover:text-[#f1f1f1]  w-7 h-7 rotate-45 flex justify-center items-center rounded-full border-[1px]'>
                   <FaArrowUpLong />
                   </div>

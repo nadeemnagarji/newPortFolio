@@ -1,15 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Navbar from './components/Navbar'
-import LandingPage from './pages/LandingPage'
-import Marque from './components/Marque'
-import About from './components/About'
-import Projects from './components/project/Projects'
-import Footer from './components/Footer'
-import LastFooter from './components/LastFooter'
+
 
 import LocomotiveScroll from 'locomotive-scroll';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import MainPage from './pages/MainPage'
+import ResumePDF from './pages/Resume';
 
 
 
@@ -19,18 +14,21 @@ function App() {
   const locomotiveScroll = new LocomotiveScroll();
 
 
+
+
+
   return (
-      <div className=" w-screen  overflow-x-hidden flex items-center flex-col  bg-white">
-       
-          <Navbar />
-          <LandingPage />
-          <Marque />
-          
-          <About />
-          <Projects />
-          <Footer />
-          <LastFooter />
-      </div>
+
+    <Router>
+      <Routes>
+        
+ 
+        <Route path="/" element={<MainPage />} />
+        <Route path="/resume" element={<ResumePDF/>} />
+        
+   
+      </Routes>
+      </Router>
     
   )
 }

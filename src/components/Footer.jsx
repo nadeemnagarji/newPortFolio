@@ -66,7 +66,7 @@ export default function Footer(params) {
 
    
     return(
-        <div ref={ref} data-scroll  data-scroll-section data-scroll-speed="-0.2"   className="w-full z-40  bg-[#fafaf9] text-center max-laptop:p-5   px-20 pb-10  ">
+        <div name="contact" ref={ref} data-scroll  data-scroll-section data-scroll-speed="-0.2"   className="w-full z-40  bg-[#fafaf9] text-center max-laptop:p-5   px-20 pb-10  ">
             <motion.h1 
              initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
              animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:50} }  
@@ -83,7 +83,7 @@ export default function Footer(params) {
                         </motion.h1>
                 <div className="flex flex-col justify-between  h-50 mt-20">
 
-                    <div className="flex  w-full justify-between gap-20">
+                    <div className="flex  max-tablet:flex-col w-full justify-between gap-20">
                         <div   className="border-b-[1px] w-full flex flex-col items-start justify-end border-[#8c8c73] h-10" >
                         {name && <label className="text-[#8c8c73] text-[10px]">Your name</label>}
                         <input  name="name" onFocus={(e)=>handlefocus(e)} onBlur={(e)=>handleBlur(e)} value={data.name} onChange={(e)=>handleChange(e)} className="w-full  outline-none border-none bg-transparent" placeholder="Your Name" type="text"  />
@@ -132,16 +132,16 @@ export default function Footer(params) {
                      animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
                      transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.3}}
                     className=" text-3xl   font-main font-bold mb-4">My Digital Spaces</motion.h1>
-                   <div className="flex max-lg-phone:w-full w-1/2 h-10 gap-2 items-center text-[#8c8c73] max-lg-phone:justify-center"><TiSocialLinkedinCircular /> <motion.h3
+                    <a  href="https://www.linkedin.com/in/nadeem-nagarji" target="_blank" > <div className="flex max-lg-phone:w-full w-1/2 h-10 gap-2 items-center text-[#8c8c73] max-lg-phone:justify-center"><TiSocialLinkedinCircular /> <motion.h3
                         initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
                         animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
                         transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:0.5}}
-                   className=" text-lg ">LinkedIn</motion.h3> </div> 
-                   <div  className="flex w-1/2 max-lg-phone:w-full max-lg-phone:justify-center h-10 gap-2 items-center text-[#8c8c73]" > <  SlSocialGithub /> < motion.h3
+                   className=" text-lg ">LinkedIn</motion.h3> </div> </a>
+                  <a  href="https://github.com/nadeemnagarji" target="_blank" ><div  className="flex w-1/2 max-lg-phone:w-full max-lg-phone:justify-center h-10 gap-2 items-center text-[#8c8c73]" > <  SlSocialGithub /> < motion.h3
                         initial={ isInView? {opacity:"0",y:20}: {opacity:"100%",y:0}} 
                         animate={isInView?  {opacity:"100%",y:0}:{opacity:"0",y:20} }  
                         transition={{ease:[0.76, 0, 0.24, 1],duration:1,delay:1}}
-                   className="text-lg"> Github</motion.h3> </div> 
+                   className="text-lg"> Github</motion.h3> </div>  </a>  
                 </div>
                 </div>
                 

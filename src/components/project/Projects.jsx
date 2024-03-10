@@ -34,7 +34,7 @@ export default function Projects(params) {
 
 
     return(
-       <div   data-scroll-section    className="w-full py-10 z-30 bg-[#F1f1f1] ">
+       <div  name="Projects"  data-scroll-section    className="w-full py-10 z-30 bg-[#F1f1f1] ">
             <div className="w-full px-20  border-b-[1px] border-zinc-700 pb-20 max-lg-phone:px-5 max-tablet:px-5">
                 <div className="border-b-[1px] border-zinc-700 ">
                 <h1 className=" font-main text-5xl pb-10 " >My Projects</h1>
