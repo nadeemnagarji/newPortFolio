@@ -86,7 +86,7 @@ const downloadFile = ()=>{
         </div>
           
           <Link
-          
+           className=' tablet:hidden'
           activeClass='active'
           to="contact"
           spy={true}
