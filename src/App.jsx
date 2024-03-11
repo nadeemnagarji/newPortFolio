@@ -11,7 +11,11 @@ import ResumePDF from './pages/Resume';
 
 function App() {
   const [count, setCount] = useState(0)
-  const locomotiveScroll = new LocomotiveScroll();
+  const locomotiveScroll = new LocomotiveScroll({
+    mobile:{
+      smooth:true
+    }
+  });
 
 
 
