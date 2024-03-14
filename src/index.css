@@ -4,8 +4,9 @@
   scrollbar-width: thin;
   scrollbar-color: #FFFFFF;
   box-sizing: border-box;
-
+  user-select: none;
 }
+
 
 @tailwind components;
 @tailwind utilities;

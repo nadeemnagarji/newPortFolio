@@ -1,6 +1,8 @@
 
 import { easeInOut, motion, useInView } from "framer-motion"
 import cryptoImg from "../../../crypto.png"
+import AirbnbImg from "../../../Airbnb.png"
+import BlinkitImg from "../../../Blinkit.png"
 import { useRef, useState } from "react"
 import Cards from "./Cards"
 
@@ -50,8 +52,8 @@ export default function Projects(params) {
 
                   
                     <Cards  name="CRYPTO" img={cryptoImg} extraClasses="left-full -translate-x-1/2" links="http://crypto-tracker-eight-psi.vercel.app/" />
-                    <Cards  name="FYDE" img={cryptoImg} extraClasses="right-full translate-x-1/3" />
-                    <Cards name="CRYPTO" img={cryptoImg} extraClasses="left-full -translate-x-1/2" />
+                    <Cards  name="AirBnB" img={AirbnbImg} extraClasses="right-full translate-x-1/3" links="https://nadeemnagarji.github.io/Airbnb-Clone/" />
+                    <Cards name="Blinkit-UI" img={BlinkitImg} extraClasses="left-full -translate-x-1/2" links="https://nadeemnagarji.github.io/Blinkit-clone/" />
                 </div>
 
 

@@ -14,6 +14,7 @@ const [activeLink, setActiveLink] = useState('');
 const [sideNav,setSideNav] = useState(false)
 const handleSetActive =(to)=>{
   setActiveLink(to)
+  console.log(to);
 }
 
 let PrevScroll = useRef(0)
@@ -57,7 +58,7 @@ const downloadFile = ()=>{
             <h3 className=''>Nadeem</h3>
             <p className=' mt-0'>Nagarji</p>
         </div> </a>
-        <div className='links max-tablet:hidden    flex gap-10 items-center'>
+        <div className='links max-tablet:hidden    flex gap-10 items-center px-2'>
             {services.map((item,i)=><Link
             activeClass='active'
             to={sections[i].title}
