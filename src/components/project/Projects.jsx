@@ -1,70 +1,80 @@
-
-import { easeInOut, motion, useInView } from "framer-motion"
-import cryptoImg from "../../../crypto.png"
-import AirbnbImg from "../../../Airbnb.png"
-import BlinkitImg from "../../../Blinkit.png"
-import { useRef, useState } from "react"
-import Cards from "./Cards"
+import { useInView } from "framer-motion";
+import cryptoImg from "../../../crypto.png";
+import AirbnbImg from "../../../Airbnb.png";
+import BlinkitImg from "../../../Blinkit.png";
+import MusicImg from "../../../Music.png";
+import { useRef, useState } from "react";
+import Cards from "./Cards";
 
 export default function Projects(params) {
+  const [ishovering, setHovering] = useState(false);
 
-    const [ishovering,setHovering] = useState(false)
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
-    const ref = useRef(null)
-    const isInView = useInView(ref)
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.5,
+      },
+    },
+  };
 
-    const container = {
-        hidden: { opacity: 1, scale: 0 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-            delayChildren: 0.5,
-            staggerChildren: 0.5,
-            
-          }
-        }
-      };
-      
-      const items = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-          y: 0,
-          opacity: 1
-        }
-      };
+  const items = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
 
+  return (
+    <div
+      name="Projects"
+      data-scroll-section
+      className="w-full py-10 z-30 bg-[#F1f1f1] "
+    >
+      <div className="w-full px-20  border-b-[1px] border-zinc-700 pb-20 max-lg-phone:px-5 max-tablet:px-5">
+        <div className="border-b-[1px] border-zinc-700 ">
+          <h1 className=" font-main text-5xl pb-10 ">My Projects</h1>
+        </div>
 
-    return(
-       <div  name="Projects"  data-scroll-section    className="w-full py-10 z-30 bg-[#F1f1f1] ">
-            <div className="w-full px-20  border-b-[1px] border-zinc-700 pb-20 max-lg-phone:px-5 max-tablet:px-5">
-                <div className="border-b-[1px] border-zinc-700 ">
-                <h1 className=" font-main text-5xl pb-10 " >My Projects</h1>
-                </div>
-             
-                <div className="px-10  max-lg-phone:px-0">
-
-
-
-                <div  className="cards w-full laptop:grid flex flex-wrap items-center justify-center   laptop:grid-cols-2 gap-4 mt-16 ">
-
-                  
-
-                  
-                    <Cards  name="CRYPTO" img={cryptoImg} extraClasses="left-full -translate-x-1/2" links="http://crypto-tracker-eight-psi.vercel.app/" />
-                    <Cards  name="AirBnB" img={AirbnbImg} extraClasses="right-full translate-x-1/3" links="https://nadeemnagarji.github.io/Airbnb-Clone/" />
-                    <Cards name="Blinkit-UI" img={BlinkitImg} extraClasses="left-full -translate-x-1/2" links="https://nadeemnagarji.github.io/Blinkit-clone/" />
-                </div>
-
-
-
-                </div>
-               
-            </div>
-       </div>
-    )
-};
-
+        <div className="px-10  max-lg-phone:px-0">
+          <div className="cards w-full laptop:grid flex flex-wrap items-center justify-center   laptop:grid-cols-2 gap-4 mt-16 ">
+            <Cards
+              name="CRYPTO"
+              img={cryptoImg}
+              extraClasses="left-full -translate-x-1/2"
+              links="http://crypto-tracker-eight-psi.vercel.app/"
+            />
+            <Cards
+              name="Music Academy"
+              img={MusicImg}
+              extraClasses="right-full translate-x-1/3"
+              links="https://music-maestro.vercel.app/"
+            />
+            <Cards
+              name="AirBnB"
+              img={AirbnbImg}
+              extraClasses="left-full -translate-x-1/2"
+              links="https://nadeemnagarji.github.io/Airbnb-Clone/"
+            />
+            <Cards
+              name="Blinkit-UI"
+              img={BlinkitImg}
+              extraClasses="right-full translate-x-1/3"
+              links="https://nadeemnagarji.github.io/Blinkit-clone/"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /*
 
