@@ -1,13 +1,16 @@
-import React from 'react';
-import resume from '../MainResume.pdf';
+import React from "react";
+import resume from "../Resume.pdf";
 
 const ResumePDF = () => {
   return (
     <div>
-    <object data={resume} type="application/pdf" width="100%" height="100%">
-    <p>Sorry, your browser doesn't support embedded PDFs. You can download the PDF <a href={resume}>here</a>.</p>
-    </object>
-  </div>
+      <object data={resume} type="application/pdf" width="100%" height="100%">
+        <p>
+          Sorry, your browser doesn't support embedded PDFs. You can download
+          the PDF <a href={resume}>here</a>.
+        </p>
+      </object>
+    </div>
   );
 };
 

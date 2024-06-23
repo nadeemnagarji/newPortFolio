@@ -46,13 +46,13 @@ export default function Projects(params) {
         <div className="px-10  max-lg-phone:px-0">
           <div className="cards w-full laptop:grid flex flex-wrap items-center justify-center   laptop:grid-cols-2 gap-4 mt-16 ">
             <Cards
-              name="CRYPTO"
+              name="Crypto Tracker"
               img={cryptoImg}
               extraClasses="left-full -translate-x-1/2"
               links="http://crypto-tracker-eight-psi.vercel.app/"
             />
             <Cards
-              name="Music Academy"
+              name="Music  Academy"
               img={MusicImg}
               extraClasses="right-full translate-x-1/3"
               links="https://music-maestro.vercel.app/"
