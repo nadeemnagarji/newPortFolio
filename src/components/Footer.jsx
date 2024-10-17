@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
-
+import axios from "axios"
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { SlSocialGithub } from "react-icons/sl";
 import { motion, useInView } from "framer-motion";
+import toast from "react-hot-toast";
 
 export default function Footer(params) {
   const [name, setname] = useState(null);
@@ -49,13 +50,30 @@ export default function Footer(params) {
     setdata({ ...data, [name]: value });
   };
 
-  const handleSubmit = () => {
-    console.log(data);
-    setdata({
-      name: "",
-      email: "",
-      message: "",
-    });
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    console.log(typeof(data));
+
+    try {
+      const res = await axios.post("https://backend.nadeemnagarji.workers.dev/message",data,{headers:{"Content-Type":"application/json"}})
+     // console.log(res.data.msg);
+
+      if(res.data.msg==="message received"){
+        toast.success(`Will Get Back To You Soon !`)
+      }
+
+     
+      
+      setdata({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error(error.message)
+    }
+
+    
   };
 
   return (

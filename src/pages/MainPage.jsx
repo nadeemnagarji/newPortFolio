@@ -1,5 +1,5 @@
 
-
+import {Toaster} from "react-hot-toast"
 
 import Navbar from "../components/Navbar"
 import LandingPage from './LandingPage'
@@ -26,6 +26,7 @@ export default function MainPage(params) {
       ]
     return(
       <div className=" w-screen  overflow-x-hidden flex items-center flex-col  bg-white">
+        <Toaster />
           <Navbar  sections={sections}/>
           <LandingPage />
           <Marque />

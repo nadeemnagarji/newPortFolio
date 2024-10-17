@@ -26,7 +26,7 @@ function App() {
     <Router>
       <Routes>
         
- 
+
         <Route path="/" element={<MainPage />} />
         <Route path="/resume" element={<ResumePDF/>} />
         
