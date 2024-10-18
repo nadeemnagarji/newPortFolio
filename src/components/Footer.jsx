@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 export default function Footer(params) {
   const [name, setname] = useState(null);
   const [email, setEmail] = useState(null);
+  const [isSubmit,setIsSubmit] = useState(false)
   const [message, setMessage] = useState(null);
   const [data, setdata] = useState({
     name: "",
@@ -52,6 +53,7 @@ export default function Footer(params) {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
+    setIsSubmit(true)
     console.log(typeof(data));
 
     try {
@@ -60,6 +62,7 @@ export default function Footer(params) {
 
       if(res.data.msg==="message received"){
         toast.success(`Will Get Back To You Soon !`)
+        setIsSubmit(false)
       }
 
      
@@ -169,6 +172,7 @@ export default function Footer(params) {
             </div>
 
             <motion.button
+            disabled={isSubmit? true:false}
               type="submit"
               initial={
                 isInView ? { opacity: "0", y: 20 } : { opacity: "100%", y: 0 }
@@ -177,7 +181,8 @@ export default function Footer(params) {
                 isInView ? { opacity: "100%", y: 0 } : { opacity: "0", y: 20 }
               }
               transition={{ ease: [0.76, 0, 0.24, 1], duration: 1, delay: 1 }}
-              className=" self-start mt-10 px-8 py-4 rounded-full font-neue font-medium text-[#f1f1f1] bg-[#262626] max-lg-phone:self-center "
+              className={`self-start mt-10 px-8 py-4 rounded-full font-neue font-medium max-lg-phone:self-center cursor-pointer 
+                ${isSubmit ? 'bg-[#f1f1f1] text-[#262626]' : 'bg-[#262626] text-[#f1f1f1]'}`}
             >
               SEND MESSAGE
             </motion.button>
