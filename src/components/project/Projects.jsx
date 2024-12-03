@@ -5,7 +5,7 @@ import BlinkitImg from "../../../Blinkit.png";
 import MusicImg from "../../../Music.png";
 import { useRef, useState } from "react";
 import Cards from "./Cards";
-
+import praccel from "../../../public/Praccel.png"
 export default function Projects(params) {
   const [ishovering, setHovering] = useState(false);
 
@@ -58,15 +58,20 @@ export default function Projects(params) {
               links="https://music-maestro.vercel.app/"
             />
             <Cards
+            name="Praccel"
+            img={praccel}
+              extraClasses="left-full -translate-x-1/2"
+            />
+            <Cards
               name="AirBnB"
               img={AirbnbImg}
-              extraClasses="left-full -translate-x-1/2"
+              extraClasses="right-full translate-x-1/3"
               links="https://nadeemnagarji.github.io/Airbnb-Clone/"
             />
             <Cards
               name="Blinkit-UI"
               img={BlinkitImg}
-              extraClasses="right-full translate-x-1/3"
+                 extraClasses="left-full -translate-x-1/2"
               links="https://nadeemnagarji.github.io/Blinkit-clone/"
             />
           </div>

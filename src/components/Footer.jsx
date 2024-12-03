@@ -74,6 +74,7 @@ export default function Footer(params) {
       });
     } catch (error) {
       toast.error(error.message)
+      setIsSubmit(false)
     }
 
     

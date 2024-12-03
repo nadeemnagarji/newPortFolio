@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import heroImg from "../assets/hero.jpg"
 import { FaArrowUpLong } from "react-icons/fa6";
 import {  motion, useInView } from 'framer-motion';
@@ -6,6 +6,7 @@ import {  motion, useInView } from 'framer-motion';
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { SlSocialGithub } from "react-icons/sl";
 import { Element, Link, animateScroll as scroll, scroller } from 'react-scroll'
+import axios from 'axios';
 function LandingPage() {
 
 
@@ -31,6 +32,14 @@ function LandingPage() {
     }
   };
   
+  const startBackend = async()=>{
+    const res = await axios.get("https://backend.nadeemnagarji.workers.dev/")
+   console.log(res.data)
+  }
+  useEffect(()=>{
+    startBackend()
+  },[])
+
   return (
     <div name="home"  data-scroll data-scroll-section data-scroll-speed="-.5"  className='w-full h-[90vh] pt-1 mt-10 text-[#212121]    max-laptop:h-[70vh] max-lg-phone:h-[50vh]' >
 
