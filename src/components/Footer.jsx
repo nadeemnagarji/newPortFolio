@@ -61,7 +61,10 @@ export default function Footer(params) {
      // console.log(res.data.msg);
 
       if(res.data.msg==="message received"){
-        toast.success(`Will Get Back To You Soon !`)
+        toast.success(`Message Received.`)
+        setTimeout(() => {
+           toast.success("Will get back to you soon");
+            }, 2000)
         setIsSubmit(false)
       }
 
